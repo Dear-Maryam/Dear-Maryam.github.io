@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Allura&family=Sacramento&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, #fff0f5 0%, #ffe6e6 100%);
+    overflow: hidden;
+    font-family: 'Parisienne', cursive;
+    animation: bgShift 20s infinite alternate;
+  }
+
+  @keyframes bgShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+
+  .background-hearts {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .background-hearts span {
+    position: absolute;
+    display: block;
+    width: 12px; height: 12px;
+    background: rgba(255,105,180,0.3);
+    animation: float 12s linear infinite;
+    bottom: -20px;
+    border-radius: 50%;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-50vh) rotate(360deg); opacity: 0.6; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+  }
+
+  .letter {
+    z-index: 1;
+    background: rgba(255, 248, 240, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.3);
+    width: 90%;
+    max-width: 420px;
+    padding: 35px 30px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    max-height: 80vh;
+    overflow-y: auto;
+    font-size: 1.4em;
+    color: #6b2a4a;
+    line-height: 2em;
+    animation: letterPop 1.5s ease forwards;
+    scroll-behavior: smooth;
+    display: none;
+    font-family: 'Allura', cursive;
+  }
+
+  @keyframes letterPop {
+    0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  .letter::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .letter::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .letter::-webkit-scrollbar-thumb {
+    background: rgba(231, 84, 128, 0.6);
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: #e75480;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(255, 192, 203, 0.6);
+  }
+
+  .signature {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.2em;
+    color: #d6336c;
+    margin-top: 30px;
+    text-align: right;
+  }
+
+  .question-container {
+    z-index: 1;
+    background: rgba(255, 248, 240, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.3);
+    width: 90%;
+    max-width: 420px;
+    padding: 35px 30px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #6b2a4a;
+    line-height: 1.8em;
+    backdrop-filter: blur(10px);
+    font-family: '', cursive;
+  }
+
+  input[type=text] {
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 12px;
+    border: 2px solid #e75480;
+    margin-top: 20px;
+    width: 75%;
+    text-align: center;
+  }
+
+  button {
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #e75480;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #d6336c;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 2.6em; }
+    .letter { font-size: 1.2em; }
+    .question-container { font-size: 1.2em; }
+  }
+</style>
+</head>
+<body>
+  <div class="background-hearts"></div>
+
+  <div class="question-container" id="questionBox">
+    <p >Before you can read my letter, answer this:</p>
+    <p>What is my sister's name?</p>
+    <input type="text" id="answerInput" placeholder="Type your answer here...">
+    <br>
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <div class="letter" id="letterBox">
+    <h2>Dear Mary,</h2>
+    <p>As I sit here thinking about you, my mind keeps replaying all the beautiful moments we’ve shared, and it only makes me miss you more. I know the situation with your parents has left you feeling overwhelmed. That can weigh heavy on anyone, especially someone as thoughtful and loving as you. But please, don’t be too hard on yourself. You were navigating something new and exciting, and sometimes we learn as we go. I’m proud of you for facing it head-on, and I believe you’ll rebuild that trust stronger than before.</p>
+    <p>I’m writing because I want you to feel my support wrapping around you like a warm embrace. Whatever you need right now, a shoulder to lean on, advice on talking things through with your family, or just someone to remind you of your incredible strength, I’m here, fully and without hesitation. We can work through this together, at your pace, with open hearts and no pressure. You’ve got this, and I’ll be by your side every step, cheering you on.</p>
+    <p>And let me remind you, from the depths of my soul, how profoundly I love you. I love the way your eyes sparkle when you’re passionate about something, the sound of your voice that calms my storms, and the gentle way you make the world feel kinder. I love your infectious energy, and how you inspire me to be better every day. My love for you is unwavering, a constant light that grows brighter even in tough times like these. You’re my everything, and I cherish you more than words can say.</p>
+    <p>Whenever you’re ready, let’s talk. Until then, know that you’re always in my thoughts, and my love for you is endless.</p>
+    <div class="signature">Forever yours</div>
+  </div>
+
+  <script>
+    const hearts = document.querySelector('.background-hearts');
+    for (let i = 0; i < 30; i++) {
+      let span = document.createElement('span');
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.width = span.style.height = (Math.random() * 15 + 8) + 'px';
+      span.style.animationDelay = Math.random() * 5 + 's';
+      span.style.background = `rgba(255,105,180,${Math.random() * 0.5 + 0.3})`;
+      hearts.appendChild(span);
+    }
+
+    function checkAnswer() {
+      const answer = document.getElementById('answerInput').value.trim().toLowerCase();
+      if (answer === 'nahid' || answer === 'ناهید') {
+        document.getElementById('questionBox').style.display = 'none';
+        document.getElementById('letterBox').style.display = 'block';
+      } else {
+        alert('Incorrect! Try again.');
+      }
+    }
+  </script>
+</body>
+</html>
